@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import cgi
 import json
 import os
+import sys
 import urllib.request
 import urllib.parse
 
@@ -32,10 +32,15 @@ if not token or not chat_id:
     print(json.dumps({'success': False, 'message': 'Server configuration missing'}))
     exit()
 
-form     = cgi.FieldStorage()
-name     = form.getvalue('name', '').strip()
-message  = form.getvalue('message', '').strip()
-honeypot = form.getvalue('website', '')
+raw  = sys.stdin.buffer.read() if hasattr(sys.stdin, 'buffer') else sys.stdin.read().encode()
+form = urllib.parse.parse_qs(raw.decode(), keep_blank_values=True)
+
+def get(key):
+    return form.get(key, [''])[0].strip()
+
+name     = get('name')
+message  = get('message')
+honeypot = get('website')
 
 if honeypot:
     print(json.dumps({'success': True, 'message': 'Message sent!'}))
