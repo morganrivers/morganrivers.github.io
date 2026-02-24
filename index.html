@@ -26,6 +26,27 @@
     <style>
     .sidebar a {font-family: "Roboto", sans-serif}
     body,h1,h2,h3,h4,h5,h6,.wide {font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;}
+    #contact-form input[type="text"],
+    #contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+    #contact-form button {
+        padding: 10px 25px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+        font-size: 15px;
+    }
+    #contact-form button:hover { background: #555; }
+    #contact-status { margin-top: 8px; }
     </style>
 
     <body class="home blog">
@@ -58,11 +79,13 @@
                 <nav id="header-main-menu">
                     <ul class="main-menu sm sm-clean">
                         <li><a href="index.html" class="current">About Me</a></li>
-                        <li><a href="index.html#software_projects">Software Projects</a></li>
+                        <li><a href="index.html#software_projects">Research Code Repositories</a></li>
+                        <li><a href="index.html#linux_tools">Linux Software Projects</a></li>
                         <li><a href="https://scholar.google.com/citations?user=nXYa_QEAAAAJ">Publications</a></li>
                         <li><a href="Portfolio.pdf">Engineering Portfolio</a></li>
                         <li><a href="Resume.pdf">Resume</a></li>
                         <li><a href="CV.pdf">CV</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <footer>
@@ -86,10 +109,9 @@
                     <div class="social-list">
                         <a href="https://www.linkedin.com/in/morgan-rivers"><i class="fa fa-linkedin"></i></a>
                         <a href="https://github.com/morganrivers/"><i class="fa fa-github"></i></a>
-                        <a href="https://www.facebook.com/morgan.rivers.94"><i class="fa fa-facebook"></i></a>
                     </div>
                 </div>
-                <div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div>
+                <!--<div class="fixed scroll-top"><i class="fa fa-caret-square-o-up" aria-hidden="true"></i></div> -->
             </div>
             <div class="clear"></div>
         </div>
@@ -108,7 +130,7 @@
                             <div class="content-1170 center-relative">
                                 <h1 class="entry-title">Welcome.</h1>
                                 <div class="excerpt">
-                                    I'm Morgan Rivers, a researcher located in Berlin, Germany. I'm interested in intentional communities, science and technology, and global catastrophic risks. I currently work as a researcher at <a href="https://allfed.info/papers/" >ALLFED</a>, the Alliance to Feed the Earth in Disasters. You can read more about my engineering projects <a href="Portfolio.pdf" >here</a>.
+                                    I'm Morgan, a researcher located in Berlin, Germany. I'm interested in intentional communities, science and technology, and preventing extreme poverty and societal collapse. I currently study as a masters student in climate physics and sustainability at Freie Universität Berlin, focusing on improving forecasts for international aid. Check out my <a href="https://github.com/morganrivers/">github</a> to see in-progress papers and projects, and my published <a href="https://scholar.google.com/citations?user=nXYa_QEAAAAJ">research papers</a>. You can look at my current masters thesis <a href=https://github.com/morganrivers/forecasting_earth_system/blob/previews/master/thesis.pdf>here</a>, as it is continuously updated as I make updates to it. I also have a public website demonstrating the results of the thesis <a href=http://forecasting-iati.onrender.com>here</a>. 
                                 </div>
                                 <div class="clear"></div>
                                 <br>
@@ -116,115 +138,34 @@
                                 <div class="clear"></div>
                             </div>
                         
+
+                            <div class="content-1170 center-relative">
+                                <div class="excerpt">
+                                    <form id="contact-form">
+                                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                                        <p><input type="text" id="contact-name" placeholder="Your name" maxlength="100"></p>
+                                        <p><textarea id="contact-message" placeholder="Your message" rows="5" maxlength="2000"></textarea></p>
+                                        <p><button type="submit" id="contact-submit">Send</button></p>
+                                        <p id="contact-status"></p>
+                                    </form>
+                                </div>
+                                <div class="clear"></div>
+                                <br><br>
+                            </div>
+
                             <div class="page-full-width ">
                                 <div class="team-holder ">
                                     <div class="member relative one ">
                                         <img src="images/mecropped.png" alt="me">
                                         <div class="member-info">
                                             <div class="member-name">Morgan Rivers</div>
-                                            <div class="member-position">morgan [at] morganrivers [dot] com</div>
+                                            <div class="member-position">Email me at: rivers [at] uni-potsdam.de</div>
                                             <div class="member-content">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="clear"></div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="clear"></div>
-
-                            <h1 class="entry-title" id="software_projects">Software Projects</h1>
-                            <div class="excerpt">
-                                <div class="category">
-                                    <h2 class="cat-links">Research Repositories</h2>
-                                    <p>I believe in open source software and open science. All of my major software projects I've developed past 2019 are available below.</p>
-                                    <br>
-
-                                    <ul>
-                                        <li>
-                                            <strong>ALLFED Integrated Model</strong>
-                                            <p>An integrated food supply model for global trade and resilient food adaptations in nuclear winter. It has been used to advise various governmental and non-governmental organizations on preparations and cost-effectiveness estimates, as well as guiding research and prioritization at <a href="https://allfed.info">ALLFED</a>.</p> See the latest preprint <a href="https://allfed.info/images/pdfs/Preprint%20V2.0%20Integrated%20assessment%20ALLFED.docx.pdf">here</a>.</p>
-                                            <a href="https://github.com/allfed/allfed-integrated-model">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>GeomagneticModel</strong>
-                                            <p> I developed a model which incorporates thermal models of HVT tie bar hot spots, historical geoelectric field estimates, and a global conductivity model to estimate the risk of long-term power outage due to transformer overheating failure. Assuming a uniform 33% HVT spare capacity, our analysis indicates that a 1 in 10,000 year storm would result in approximately 1% of the population in Europe and North America experiencing a long-term (months to years) electricity loss. The model is unusually broad and end-to-end, encompassing a wide geographic scope and long time horizons. I hope that it inspires similiar on other global catastrophic risks. You can view the preprint for the paper <a href="https://arxiv.org/abs/2403.18070">here</a>.</p>
-                                            <a href="https://github.com/allfed/GeomagneticModel">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>mink</strong>
-                                            <p>A major reformatting and open-sourcing of IFPRI's <a href="https://www.ifpri.org/publication/mink-details-global-gridded-crop-modeling-system">mink</a> crop model courtesy of Ricky Robertson. I added a python analysis, got it running multi-threaded, made a singularity container for it, and added lots of comments and some documentation. However, the code is sufficiently legacy that I do recommend interested parties generally start with a more modern crop model, such as <a href="https://www.wur.nl/en/research-results/research-institutes/environmental-research/facilities-tools/software-models-and-databases/wofost.htm">WOFOST</a></p>
-                                            <a href="https://github.com/allfed/mink">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>LosingIndustryCropYields</strong>
-                                            <p>A general linear statistical model of crop yields to evaluate the effect of loss of industrial capacity, including chemical nitrogen production, tractors, and powered irrigation on global crop yields. This is the only repository on the list in which I was not the primary author, which in this case is Jessica Morsdorf, as it was used for her master's thesis. However, I contributed the data processing and heavily advised the process, as she had not set up a code repository before. The published paper is <a href="https://pubmed.ncbi.nlm.nih.gov/38223898/">here</a>. The full text is available on the <a href="https://allfed.info">ALLFED</a> website.</p>
-                                            <a href="https://github.com/allfed/LosingIndustryCropYields">View on GitHub</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <br>
-                                <br>
-
-                                <div class="category">
-                                    <h2 class="cat-links">Unix Productivity Tools</h2>
-                                    <ul>
-                                        <li>
-                                            <strong>ClockifyAutomation</strong>
-                                            <p>Automate time invoicing using google calendar, activitywatch, and the clockify API. This is my largest unix productivity tool, as it automatically tracks and categorizes my billable contractor hours based on watching my window titles on my laptop, and the categorizations I choose for each window title. Forget about manually entering time ever again!</p>
-                                            <a href="https://github.com/morganrivers/ClockifyAutomation">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>noise_masking</strong>
-                                            <p>Have you ever thought about the fact that the frequency band of speech is fairly narrow, all things considered, and a gaussian white noise spectrum that is quiet in the majority of audible frequency space would block speech quite well? I have! This script records audio, generates a spectrogram, fetches audio statistics, and plays back audio with adjusted volume in real-time based on the system volume. It's great for blocking voices at coffee shops and communal spaces, but it doesn't have to be very loud as it focuses the audio only on the frequency range that is the loudest in the environment. It works great in combination with noise-cancelling headphones. I cannot figure out why this is not a standard feature in noise canceling headphones! Hopefully they add it eventually. </p>
-                                            <a href="https://github.com/morganrivers/noise_masking">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>problem_set_ocr</strong>
-                                            <p> A neat little repository which automates my physics homework submissions. Uses GPT-4-vision optical character recognition to scan handwritten problem sets to valid latex in seconds. You can use it for any handwritten documents which you wish to format in latex. </p>
-                                            <a href="https://github.com/morganrivers/problem_set_ocr">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>timezone_and_flux_from_ip</strong>
-                                            <p> Updates the system timezone and the color temperature of the display based on the geolocation of the current IP address. The script is designed to be used with NetworkManager's dispatcher to be executed whenever a network connection goes up.</p>
-                                            <a href="https://github.com/morganrivers/timezone_and_flux_from_ip">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>bash_history_improved</strong>
-                                            <p> This is my configuration so that bash history actually works! Infinite number of line storage, test to see everything is set up correctly, does not occasionally delete back to 500 lines. [NOTE: I now use fish which (mostly) resolves all of those issues, so this repo may be a bit out of date] </p>
-                                            <a href="https://github.com/morganrivers/bash_history_improved">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>how_to_ssh_key</strong>
-                                            <p> Tutorial for adding ssh keys on github and command line.</p>
-                                            <a href="https://github.com/morganrivers/how_to_ssh_key">View on GitHub</a>
-                                        </li>
-                                        <br>
-
-                                        <li>
-                                            <strong>standard_protocol_to_use_git</strong>
-                                            <p> This tutorial will walk you through a standard Git workflow, which includes creating a new branch, checking its status, adding changes, committing them, and finally, pushing them to the remote repository. The workflow also includes how to prepare for a pull request. This is basic knowledge that seems to currently not be widespread and tutorials don't really seem to focus on the key basics. Professional software engineers really need to learn this kind of thing if they haven't already, so I made a little tutorial.</p>
-                                            <a href="https://github.com/morganrivers/standard_protocol_to_use_git">View on GitHub</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
 
                         </div>
@@ -251,5 +192,32 @@
         <script type='text/javascript' src='js/jquery.touchSwipe.min.js'></script>
         <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
         <script type='text/javascript' src='js/main.js'></script>
+        <script>
+        (function($) {
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();
+            var name = $('#contact-name').val().trim();
+            var message = $('#contact-message').val().trim();
+            var honeypot = $('input[name="website"]').val();
+            if (!name || !message) {
+                $('#contact-status').css('color', '#c00').text('Please fill in all fields.');
+                return;
+            }
+            $('#contact-submit').prop('disabled', true).text('Sending...');
+            $.post('php/sendTelegram.php', { name: name, message: message, website: honeypot }, function(data) {
+                if (data.success) {
+                    $('#contact-status').css('color', 'green').text('Message sent!');
+                    $('#contact-form')[0].reset();
+                } else {
+                    $('#contact-status').css('color', '#c00').text('Failed to send. Please email me directly.');
+                }
+            }, 'json').fail(function() {
+                $('#contact-status').css('color', '#c00').text('Failed to send. Please email me directly.');
+            }).always(function() {
+                $('#contact-submit').prop('disabled', false).text('Send');
+            });
+        });
+        })(jQuery);
+        </script>
     </body>
 </html>
