@@ -32,7 +32,8 @@ if not token or not chat_id:
     print(json.dumps({'success': False, 'message': 'Server configuration missing'}))
     exit()
 
-raw  = sys.stdin.buffer.read() if hasattr(sys.stdin, 'buffer') else sys.stdin.read().encode()
+content_length = int(os.environ.get('CONTENT_LENGTH', 0))
+raw = sys.stdin.buffer.read(content_length) if hasattr(sys.stdin, 'buffer') else sys.stdin.read(content_length).encode()
 form = urllib.parse.parse_qs(raw.decode(), keep_blank_values=True)
 
 def get(key):

@@ -194,6 +194,7 @@
         <script type='text/javascript' src='js/main.js'></script>
         <script>
         (function($) {
+        $(document).ready(function() {
         $('#contact-form').on('submit', function(e) {
             e.preventDefault();
             var name = $('#contact-name').val().trim();
@@ -217,6 +218,7 @@
                 $('#contact-submit').prop('disabled', false).text('Send');
             });
         });
+        }); // end ready
         })(jQuery);
         </script>
     </body>
