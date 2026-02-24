@@ -23,3 +23,5 @@ jobs:
             --exclude='.github' \
             -e "ssh -i ~/.ssh/id_rsa" \
             ./ morganrivers_morganrivers@ssh.nyc1.nearlyfreespeech.net:/home/public/
+          ssh -i ~/.ssh/id_rsa morganrivers_morganrivers@ssh.nyc1.nearlyfreespeech.net \
+            "find /home/public/cgi-bin -name '*.py' -exec chmod +x {} \;"

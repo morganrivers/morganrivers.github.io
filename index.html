@@ -204,7 +204,7 @@
                 return;
             }
             $('#contact-submit').prop('disabled', true).text('Sending...');
-            $.post('php/sendTelegram.php', { name: name, message: message, website: honeypot }, function(data) {
+            $.post('cgi-bin/sendTelegram.py', { name: name, message: message, website: honeypot }, function(data) {
                 if (data.success) {
                     $('#contact-status').css('color', 'green').text('Message sent!');
                     $('#contact-form')[0].reset();
