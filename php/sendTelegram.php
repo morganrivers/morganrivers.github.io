@@ -48,16 +48,18 @@ if (!$token || !$chat_id) {
 
 $text = "Message from morganrivers.com\nName: " . $name . "\n\n" . $message;
 
-$ch = curl_init("https://api.telegram.org/bot" . $token . "/sendMessage");
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, ['chat_id' => $chat_id, 'text' => $text]);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-$result = curl_exec($ch);
-$err    = curl_error($ch);
-curl_close($ch);
+$url  = "https://api.telegram.org/bot" . $token . "/sendMessage";
+$body = http_build_query(['chat_id' => $chat_id, 'text' => $text]);
+$ctx  = stream_context_create(['http' => [
+    'method'  => 'POST',
+    'header'  => "Content-Type: application/x-www-form-urlencoded\r\nContent-Length: " . strlen($body) . "\r\n",
+    'content' => $body,
+    'timeout' => 10,
+]]);
 
-if ($err || $result === false) {
+$result = @file_get_contents($url, false, $ctx);
+
+if ($result === false) {
     echo json_encode(['success' => false, 'message' => 'Failed to send message']);
 } else {
     $resp = json_decode($result, true);
