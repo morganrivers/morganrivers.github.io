@@ -26,7 +26,7 @@ if (strlen($message) > 2000) {
 }
 
 // Load credentials: prefer /home/private/.env, fall back to repo .env
-$env_paths = ['/home/private/.env', dirname(dirname(__FILE__)) . '/.env'];
+$env_paths = ['/home/protected/.env', dirname(dirname(__FILE__)) . '/.env'];
 $token = null;
 $chat_id = null;
 
